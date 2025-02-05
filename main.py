@@ -1,11 +1,22 @@
 from telethon.sync import TelegramClient, events
 import asyncio
+import base64
+import os
 
+# استخراج ملف الجلسة من المتغير البيئي SESSION_DATA
+session_data = os.getenv("SESSION_DATA")
+
+if session_data:
+    with open("session_name.session", "wb") as f:
+        f.write(base64.b64decode(session_data))
+
+# إعداد بيانات API
 api_id = 26283926  
 api_hash = 'fcd8c080125fad9062c9bc7d9cb2ca2d'  
 source_channel = -1002279845213  
-destination_channel = -1002304519486
+destination_bot = -1002304519486
 
+# إنشاء عميل Telethon باستخدام الجلسة المخزنة
 client = TelegramClient('session_name', api_id, api_hash)
 
 @client.on(events.NewMessage(chats=source_channel))
