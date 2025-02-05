@@ -8,7 +8,9 @@ session_data = os.getenv("SESSION_DATA")
 
 if session_data:
     with open("session_name.session", "wb") as f:
-        f.write(base64.b64decode(session_data))
+        decoded_data = base64.b64decode(session_data)
+        f.write(decoded_data)
+        print("✅ تم فك التشفير وحفظ الجلسة بنجاح!")  # رسالة تأكيد
 
 # إعداد بيانات API
 api_id = 26283926  
