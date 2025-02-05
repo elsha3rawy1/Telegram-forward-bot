@@ -4,7 +4,7 @@ import asyncio
 api_id = 26283926  
 api_hash = 'fcd8c080125fad9062c9bc7d9cb2ca2d'  
 source_channel = -1002279845213  
-destination_bot = -1002304519486
+destination_channel = -1002304519486
 
 client = TelegramClient('session_name', api_id, api_hash)
 
