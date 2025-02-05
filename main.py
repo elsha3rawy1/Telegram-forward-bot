@@ -13,7 +13,7 @@ if session_data:
 
 api_id = 26283926  
 api_hash = 'fcd8c080125fad9062c9bc7d9cb2ca2d'  
-source_channel = -1002279845213  
+source_channel = -1002144494116  
 destination_bot = 'maestro'  
 
 client = TelegramClient('session_name', api_id, api_hash)
